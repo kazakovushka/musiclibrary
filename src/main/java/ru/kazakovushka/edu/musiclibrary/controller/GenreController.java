@@ -32,7 +32,7 @@ public class GenreController {
        genreService.deleteGenre(id);
     }
 
-    @PostMapping(path = "/genres/{id}")
+    @PutMapping(path = "/genres/{id}")
     public Genre updateGenre(@PathVariable UUID id, @RequestBody String name){
        return genreService.updateGenre(id,name);
     }

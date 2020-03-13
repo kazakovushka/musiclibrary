@@ -13,6 +13,7 @@ public class Singer {
     @OneToMany
     private Set<Song> songs;
 
+    @Column(unique = true)
     private String name;
 
 
@@ -45,10 +46,10 @@ public class Singer {
 
     @Override
     public String toString() {
-
         return "Singer{" +
                 "id=" + id +
-                ", songs=" + songs.stream().toString() +
+                ", songs=" + songs +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

@@ -25,7 +25,7 @@ public class GenreServiceImpl implements GenreService {
             repository.save(g);
             return g;
         } else{
-            throw new IllegalArgumentException("name already exists");
+            throw new IllegalArgumentException("genre already exists");
         }
     }
 
@@ -45,7 +45,7 @@ public class GenreServiceImpl implements GenreService {
             return g;
         }
         else{
-            throw new IllegalArgumentException("genre not exists");
+            throw new IllegalArgumentException("genre doesn't not exist");
         }
     }
 

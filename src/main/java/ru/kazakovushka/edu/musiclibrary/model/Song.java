@@ -17,6 +17,9 @@ public class Song {
     private String length;
     private int year;
 
+    @ManyToOne
+    private Singer singer;
+
 
     public Song() {
     }
@@ -61,7 +64,13 @@ public class Song {
         this.year = year;
     }
 
+    public Singer getSinger() {
+        return singer;
+    }
 
+    public void setSinger(Singer singer) {
+        this.singer = singer;
+    }
 
     @Override
     public String toString() {
@@ -71,6 +80,7 @@ public class Song {
                 ", name='" + name + '\'' +
                 ", length='" + length + '\'' +
                 ", year=" + year +
+                ", singer=" + singer +
                 '}';
     }
 }

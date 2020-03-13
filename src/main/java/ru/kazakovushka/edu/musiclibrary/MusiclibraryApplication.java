@@ -5,8 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import ru.kazakovushka.edu.musiclibrary.repository.GenreRepository;
-import ru.kazakovushka.edu.musiclibrary.service.GenreService;
-import ru.kazakovushka.edu.musiclibrary.service.GenreServiceImpl;
+import ru.kazakovushka.edu.musiclibrary.repository.SingerRepository;
+import ru.kazakovushka.edu.musiclibrary.repository.SongRepository;
+import ru.kazakovushka.edu.musiclibrary.service.*;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -28,8 +29,19 @@ public class MusiclibraryApplication {
     }
 
     @Bean
-    public GenreService genreService(GenreRepository genreRepository){
+    public GenreService genreService(GenreRepository genreRepository) {
         return new GenreServiceImpl(genreRepository);
+    }
+
+    @Bean
+    public SongService songService(SongRepository songRepository) {
+        return new SongServiceImpl(songRepository);
+    }
+
+
+    @Bean
+    public SingerService singerService(SingerRepository singerRepository) {
+        return new SingerServiceImpl(singerRepository);
     }
 
     public static void main(String[] args) {
