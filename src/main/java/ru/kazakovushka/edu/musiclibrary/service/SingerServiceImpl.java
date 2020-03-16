@@ -48,8 +48,8 @@ public class SingerServiceImpl implements SingerService {
         if(s == null){
             throw new IllegalArgumentException("singer doesn't exist");
         } else {
-            s.setSongs(singer.getSongs());
             s.setName(singer.getName());
+            s.setYearOfBirth(singer.getYearOfBirth());
             singerRepository.save(s);
             return s;
         }

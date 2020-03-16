@@ -2,13 +2,14 @@ package ru.kazakovushka.edu.musiclibrary.model;
 
 import javax.persistence.*;
 import java.util.Set;
+import java.util.UUID;
 
 @Entity
 public class Song {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private UUID id;
 
     @ManyToMany
     private Set<Genre> genres;
@@ -24,11 +25,11 @@ public class Song {
     public Song() {
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
