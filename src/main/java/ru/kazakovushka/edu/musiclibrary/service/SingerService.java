@@ -12,4 +12,6 @@ public interface SingerService  {
      void deleteSinger(UUID id);
      Singer updateSinger(UUID id, Singer singer) throws IllegalArgumentException;
 
+
+
 }

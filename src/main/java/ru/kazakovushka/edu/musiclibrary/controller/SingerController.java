@@ -3,6 +3,7 @@ package ru.kazakovushka.edu.musiclibrary.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.kazakovushka.edu.musiclibrary.model.Singer;
+import ru.kazakovushka.edu.musiclibrary.model.Song;
 import ru.kazakovushka.edu.musiclibrary.service.SingerService;
 
 import java.util.List;
@@ -37,6 +38,13 @@ public class SingerController {
     @PutMapping(path = "/singers/{id}")
     public Singer updateSinger(@PathVariable UUID id, @RequestBody Singer singer){
         return singerService.updateSinger(id, singer);
+    }
+
+    //songs
+
+    @GetMapping(path = "/singers/{id}/songs")
+    public List<Song> findSongsBySingerId(@PathVariable UUID id){
+return null;
     }
 
 }
